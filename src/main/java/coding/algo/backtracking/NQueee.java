@@ -39,6 +39,9 @@ public class NQueee {
     }
 
     private boolean isSafe(Position[] p, int q, int i){
+        // check if any of the previously placed queens can attack this queen
+        // previous queens have been placed in row numbered 0 to q-1
+        // we are trying to place current queen in p[q][i]
         for (int j = 0; j < q; j++) {
             if(i==p[j].col || q+i==p[j].row+p[j].col || q-i==p[j].row-p[j].col){
                 return false;
